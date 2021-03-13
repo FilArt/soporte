@@ -1,0 +1,13 @@
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'soporte',
+        'USER': 'soporte',
+        'PASSWORD': 'soporte',
+    }
+}
+LANGUAGE_CODE = 'es-es'
+TIME_ZONE = 'Europe/Madrid'
+SECRET_KEY = None
+DEBUG = False
+ALLOWED_HOSTS = []
