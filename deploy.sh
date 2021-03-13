@@ -12,4 +12,4 @@ ssh "$SERVER" \
   pip install -r requirements.txt; \
   python manage.py migrate; \
   python manage.py collectstatic; \
-  supervisorctl restart soporte:
+  supervisorctl restart soporte
