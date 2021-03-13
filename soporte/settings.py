@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'helpdesk',  # This is us!
 ]
 SITE_ID = 1
+LOGIN_URL = '/login/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
