@@ -1,7 +1,6 @@
 beautifulsoup4==4.9.3
 Django==2.2.19
 django-bootstrap-form==3.4
-django-csp==3.7
 django-helpdesk==0.2.23
 django-markdown-deux==1.0.5
 email-reply-parser==0.5.12
