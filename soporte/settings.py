@@ -31,17 +31,21 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.staticfiles',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.sites',  # Required for determining domain url for use in emails
-    'django.contrib.admin',  # Required for helpdesk admin/maintenance
-    'django.contrib.humanize',  # Required for elapsed time formatting
-    'markdown_deux',  # Required for Knowledgebase item formatting
-    'bootstrapform', # Required for nicer formatting of forms with the default templates
+    'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.humanize',
+    'bootstrap4form',
+
+    'account',  # Required by pinax-teams
+    'pinax.invitations',  # required by pinax-teams
+    'pinax.teams',  # team support
     'helpdesk',  # This is us!
+    'reversion',  # required by pinax-teams
 ]
 SITE_ID = 1
 LOGIN_URL = '/login/'
@@ -128,5 +132,20 @@ STATIC_ROOT = 'static'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media'
+
+SESSION_COOKIE_AGE = 86400
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = True
+SESSION_COOKIE_HTTPONLY = True
+
+EMAIL_PORT = 587
+MAIL_USE_TLS = True
+HELPDESK_TRANSLATE_TICKET_COMMENTS = True
+HELPDESK_TRANSLATE_TICKET_COMMENTS_LANG = ["es", "en", "ru"]
+HELPDESK_VIEW_A_TICKET_PUBLIC = False
+HELPDESK_SUBMIT_A_TICKET_PUBLIC = False
+HELPDESK_FOLLOWUP_MOD = True
+HELPDESK_SHOW_DELETE_BUTTON_SUPERUSER_FOLLOW_UP = True
 
 from .local_settings import *
